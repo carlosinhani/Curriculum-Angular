@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'projetos',
     loadChildren: () => import('./projetos/projetos.module').then(m => m.ProjetosModule)
+  },
+  {
+    path: 'ex-prof',
+    loadChildren: () => import('./profissional/profissional.module').then(m =>m.ProfissionalModule)
   }
 ];
 
