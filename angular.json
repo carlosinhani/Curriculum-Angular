@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Curriculum"
+    }
+  },
+  "defaultProject": "Curriculum",
+  "cli": {
+    "analytics": "fe56a645-0793-4f37-94a2-11ba1a96a80c"
+  }
 }
