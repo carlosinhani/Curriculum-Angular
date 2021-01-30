@@ -1,67 +1,82 @@
 <body>
-  <form>
-    <div class="form-group">
-      <label for="inputAddress"
-        >Nome da Instituição ou Plataforma de Estudo</label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="inputAddress"
-        placeholder="Instituição ou Plataforma"
-      />
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-8">
-        <label for="inputEmail4">Cursos</label>
+  <div *ngIf="cadastro">
+    <form autocomplete="off" novalidate [formGroup]="cadastro" >
+      <div class="form-group">
+        <label for="instituicao"
+          >Nome da Instituição ou Plataforma de Estudo</label
+        >
         <input
           type="text"
           class="form-control"
-          id="inputEmail4"
-          placeholder="Curso"
+          ControlName="instituicao"
+          [formGroup]="cadastro"
+          placeholder="Instituição ou Plataforma"
         />
       </div>
-      <div class="form-group col-md-2">
-        <label for="input">Data</label>
-        <input type="date" class="form-control" id="inputPassword4" />
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputEmail4">Cursos</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="Curso"
+          />
+        </div>
+        <div class="form-group col-md-2">
+          <label for="input">Data</label>
+          <input type="date" class="form-control" id="inputPassword4" />
+        </div>
+        <div class="form-group col-md-2">
+          <label for="input">Carga Horária</label>
+          <input type="text" class="form-control" id="inputPassword4" />
+        </div>
       </div>
-      <div class="form-group col-md-2">
-        <label for="input">Carga Horária</label>
-        <input type="text" class="form-control" id="inputPassword4" />
+      <div class="form-group">
+        <label for="inputAddress">Descrição do Curso</label>
+        <input type="text" class="form-control" id="inputAddress" />
       </div>
-    </div>
-    <div class="form-group">
-      <label for="inputAddress">Imagem do Certificado</label>
-      <input
-        type="text"
-        class="form-control"
-        id="inputAddress"
-        placeholder="Colocar a Foto"
-      />
-    </div>
-    <div class="form-group">
-      <label for="inputAddress">Link do Curso</label>
-      <input
-        type="url"
-        class="form-control"
-        id="inputAddress"
-        placeholder="Colocar o link do curso"
-      />
-    </div>
+      <div class="form-group">
+        <label for="inputAddress">Imagem do Certificado</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="Colocar a Foto"
+        />
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Link do Curso</label>
+        <input
+          type="url"
+          class="form-control"
+          id="inputAddress"
+          placeholder="Colocar o link do curso"
+        />
+      </div>
 
-    <div class="custom-control custom-switch">
-      <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-      <label class="custom-control-label" for="customSwitch1"
-        >Aulas Presencial</label
-      >
-    </div>
-    <div class="custom-control custom-switch">
-      <input type="checkbox" class="custom-control-input" id="customSwitch2" />
-      <label class="custom-control-label" for="customSwitch2"
-        >Aulas On-line</label
-      >
-    </div>
-    <button type="submit" class="btn btn-success btn-lg">Salvar</button>
-    <button type="submit" class="btn btn-danger btn-lg">Cancelar</button>
-  </form>
+      <div class="custom-control custom-switch">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="customSwitch1"
+        />
+        <label class="custom-control-label" for="customSwitch1"
+          >Aulas Presencial</label
+        >
+      </div>
+      <div class="custom-control custom-switch">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="customSwitch2"
+        />
+        <label class="custom-control-label" for="customSwitch2"
+          >Aulas On-line</label
+        >
+      </div>
+      <button type="submit" class="btn btn-success btn-lg">Salvar</button>
+      <button type="submit" class="btn btn-danger btn-lg">Cancelar</button>
+    </form>
+  </div>
 </body>

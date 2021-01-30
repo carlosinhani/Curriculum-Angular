@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CadastroCursosComponent } from './cursos/cadastro-cursos/cadastro-cursos.component';
+import { CadastroCursosComponent } from "./cursos/cadastro-cursos/CadastroCursosComponent";
 
 const routes: Routes = [
   {
