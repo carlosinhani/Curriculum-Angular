@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CadastroCursosComponent } from './cursos/cadastro-cursos/cadastro-cursos.component';
 
 const routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: 'curriculum'
+    path: '', pathMatch: 'full', redirectTo: 'cadastro'
   },
   {
     path: 'curriculum',
@@ -11,7 +12,15 @@ const routes: Routes = [
   },
   {
     path: 'cursos',
-    loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule)
+    loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
+  },
+  {
+    path: 'cursos',
+    children: [
+      {
+        path: 'cadastro', component: CadastroCursosComponent
+      }
+    ]
   },
   {
     path: 'bootcamps',
@@ -23,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'ex-prof',
-    loadChildren: () => import('./profissional/profissional.module').then(m =>m.ProfissionalModule)
+    loadChildren: () => import('./profissional/profissional.module').then(m => m.ProfissionalModule)
   }
 ];
 
