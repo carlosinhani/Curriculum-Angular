@@ -1,6 +1,6 @@
 <body>
   <div *ngIf="cadastro">
-    <form autocomplete="off" novalidate [formGroup]="cadastro" >
+    <form autocomplete="off" novalidate [formGroup]="cadastro">
       <div class="form-group">
         <label for="instituicao"
           >Nome da Instituição ou Plataforma de Estudo</label
@@ -8,8 +8,8 @@
         <input
           type="text"
           class="form-control"
-          ControlName="instituicao"
-          [formGroup]="cadastro"
+          id="instituicao"
+          formControlName="instituicao"
           placeholder="Instituição ou Plataforma"
         />
       </div>
@@ -19,38 +19,57 @@
           <input
             type="text"
             class="form-control"
-            id="inputEmail4"
+            id="cursos"
+            formControlName="cursos"
             placeholder="Curso"
           />
         </div>
         <div class="form-group col-md-2">
           <label for="input">Data</label>
-          <input type="date" class="form-control" id="inputPassword4" />
+          <input
+            type="date"
+            class="form-control"
+            id="data"
+            formControlName="data"
+          />
         </div>
         <div class="form-group col-md-2">
           <label for="input">Carga Horária</label>
-          <input type="text" class="form-control" id="inputPassword4" />
+          <input
+            type="text"
+            class="form-control"
+            id="cargaH"
+            formControlName="cargaH"
+            placeholder="Quant: Horas do Curso"
+          />
         </div>
       </div>
       <div class="form-group">
-        <label for="inputAddress">Descrição do Curso</label>
-        <input type="text" class="form-control" id="inputAddress" />
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">Imagem do Certificado</label>
+        <label for="descricao">Descrição do Curso</label>
         <input
           type="text"
           class="form-control"
-          id="inputAddress"
+          id="descricao"
+          formControlName="descricao"
+        />
+      </div>
+      <div class="form-group">
+        <label for="urlFoto">Imagem do Certificado</label>
+        <input
+          type="text"
+          class="form-control"
+          id="urlFoto"
+          formControlName="urlFoto"
           placeholder="Colocar a Foto"
         />
       </div>
       <div class="form-group">
-        <label for="inputAddress">Link do Curso</label>
+        <label for="linkCurso">Link do Curso</label>
         <input
           type="url"
           class="form-control"
-          id="inputAddress"
+          id="linkCurso"
+          formControlName="linkCurso"
           placeholder="Colocar o link do curso"
         />
       </div>
@@ -75,8 +94,12 @@
           >Aulas On-line</label
         >
       </div>
-      <button type="submit" class="btn btn-success btn-lg">Salvar</button>
-      <button type="submit" class="btn btn-danger btn-lg">Cancelar</button>
+      <button type="submit" class="btn btn-success btn-lg" (click)="onSubmit()">
+        Salvar
+      </button>
+      <button type="button" class="btn btn-danger btn-lg" (click)="onCancel()">
+        Cancelar
+      </button>
     </form>
   </div>
 </body>

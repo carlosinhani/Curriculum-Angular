@@ -14,14 +14,14 @@ const routes: Routes = [
     path: 'cursos',
     loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
   },
-  {
-    path: 'cursos',
-    children: [
-      {
-        path: 'cadastro', component: CadastroCursosComponent
-      }
-    ]
-  },
+  // {
+  //   path: 'cursos',
+  //   children: [
+  //     {
+  //       path: 'cadastro', component: CadastroCursosComponent
+  //     }
+  //   ]
+  // },
   {
     path: 'bootcamps',
     loadChildren: () => import('./bootcamps/bootcamps.module').then(m => m.BootcampsModule)

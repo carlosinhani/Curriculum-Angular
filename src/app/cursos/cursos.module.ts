@@ -17,8 +17,9 @@ import { CadastroCursosComponent } from "./cadastro-cursos/CadastroCursosCompone
   imports: [
     CommonModule,
     CursosRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule
+
 
   ]
 })
