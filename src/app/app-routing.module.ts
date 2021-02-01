@@ -4,7 +4,7 @@ import { CadastroCursosComponent } from "./cursos/cadastro-cursos/CadastroCursos
 
 const routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: 'cadastro'
+    path: '', pathMatch: 'full', redirectTo: 'curriculum'
   },
   {
     path: 'curriculum',
@@ -14,14 +14,6 @@ const routes: Routes = [
     path: 'cursos',
     loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
   },
-  // {
-  //   path: 'cursos',
-  //   children: [
-  //     {
-  //       path: 'cadastro', component: CadastroCursosComponent
-  //     }
-  //   ]
-  // },
   {
     path: 'bootcamps',
     loadChildren: () => import('./bootcamps/bootcamps.module').then(m => m.BootcampsModule)

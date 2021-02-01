@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from './../../environments/environment';
 import { Registro } from '../shared/models/registros';
-import { tap } from 'rxjs/operators'
+
+import { delay, tap } from 'rxjs/operators'
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -10,7 +13,7 @@ import { tap } from 'rxjs/operators'
 })
 export class TaOkService {
 
-  private readonly API = "http://localhost:3000/cursos";
+    private readonly API = `${environment.API}cursos`;
 
   constructor(
     private http: HttpClient,
@@ -18,11 +21,14 @@ export class TaOkService {
 
   list() {
     return this.http.get<Registro[]>(this.API)
-    .pipe (
-      tap(console.log)
-    )
+      .pipe(
+        delay(2000),
+        tap(console.log)
+      );
   }
 
-
+  newCurso(registros: Registro): Observable<Registro>{
+    return this.http.post<Registro>(this.API, registros);
+  }
 
 }
