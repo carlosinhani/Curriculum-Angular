@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
-// import { TaOkService } from './../../service/ta-Ok.service';
-// import { Registro } from 'src/app/shared/models/registros';
+import { TaOkService } from './../../service/ta-Ok.service';
+import { Registro } from 'src/app/shared/models/registros';
 
 
 @Component({
@@ -19,8 +19,8 @@ export class CadastroCursosComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    // private ok: TaOkService,
-    // private activatedRoute: ActivatedRoute
+    private ok: TaOkService,
+    //  private activatedRoute: ActivatedRoute
   ) { }
 
   // get f(){
@@ -29,14 +29,14 @@ export class CadastroCursosComponent implements OnInit {
 
   ngOnInit() {
 
-    //   this.id = this.activatedRoute.snapshot.params['id'];
+    //    this.id = this.activatedRoute.snapshot.params['id'];
     //   if (this.id) {
-    //     this.ok.autenticar(this.id)
-    //       .subscribe((registro: Registro) => this.criarFormulario(registro));
-    //   } else {
-    //     this.criarFormulario(this.formularioBranco());
-    //   }
-    // }
+    //      this.ok.autenticar(this.id)
+    //        .subscribe((registro: Registro) => this.criarFormulario(registro));
+    // //   } else {
+    // //     this.criarFormulario(this.formularioBranco());
+    //    }
+
 
     // private criarFormulario(registro: Registro): void {
     this.cadastro = this.fb.group({
@@ -48,8 +48,8 @@ export class CadastroCursosComponent implements OnInit {
       urlFoto: [null, [Validators.minLength(10)]],
       linkCurso: [null, [Validators.minLength(10)]]
     });
-  }
 
+  }
   onSubmit() {
 
     console.log(this.cadastro);

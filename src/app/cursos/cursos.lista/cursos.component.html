@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">
+    <div class="float-left">
+      <h4>Cursos</h4>
+    </div>
+    <div class="float-right">
+      <button type="button" class="btn btn-primary" [routerLink]="['cadastro']">
+        Novo Curso
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Curso</th>
+          <th class="center">Certificado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curso of cursos">
+          <td>{{ curso.id }}</td>
+          <td>{{ curso.cursos }}</td>
+          <td><img src="{{ curso.urlFoto }}" alt="sem foto"></td>
+          <td>
+            <span class="float-right">
+              <button class="btn btn-warning ">
+                Visualizar
+              </button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

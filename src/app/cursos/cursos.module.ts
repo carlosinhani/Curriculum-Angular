@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CursosRoutingModule } from './cursos-routing.module';
-import { CursosComponent } from './cursos/cursos.component';
+import { CursosComponent } from './cursos.lista/cursos.component';
 import { CadastroCursosComponent } from "./cadastro-cursos/CadastroCursosComponent";
 
 

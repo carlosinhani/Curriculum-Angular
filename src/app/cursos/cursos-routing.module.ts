@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CadastroCursosComponent } from './cadastro-cursos/CadastroCursosComponent';
 
-import { CursosComponent } from './cursos/cursos.component';
+import { CursosComponent } from './cursos.lista/cursos.component';
 
 const routes: Routes = [
   { path: '', component: CursosComponent},
