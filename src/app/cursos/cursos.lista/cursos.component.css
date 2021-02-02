@@ -8,3 +8,7 @@ img {
 .center{
   text-align: center;
 }
+
+.margin{
+  margin-left: 10px;
+}

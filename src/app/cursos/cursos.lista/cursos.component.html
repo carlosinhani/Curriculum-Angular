@@ -13,16 +13,14 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Cursos</th>
+          <th class="margin">Cursos</th>
           <th class="center">Certificado</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let curso of cursos">
-          <td>{{ curso.id }}</td>
-          <td>{{ curso.cursos }}</td>
+          <p>{{ curso.cursos }}</p>
           <td><img src="{{ curso.urlFoto }}" alt="sem foto"></td>
           <td>
             <span class="float-right">
