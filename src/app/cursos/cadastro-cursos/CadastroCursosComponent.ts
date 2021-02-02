@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { TaOkService } from './../../service/ta-Ok.service';
+
+import { map, switchMap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-cadastro-cursos',
@@ -18,11 +22,22 @@ export class CadastroCursosComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private ok: TaOkService,
+    private route: ActivatedRoute
+
   ) { }
 
   ngOnInit() {
 
+
+     this.route.params
+     .pipe(
+       map((params: any) => params['id']),
+       switchMap(id => this.ok.localizaID(id))
+     )
+     .subscribe(curso => this.uptateCadastro(curso));
+
     this.cadastro = this.fb.group({
+      id: [null],
       instituicao: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
       cursos: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
       data: [null, [Validators.required]],
@@ -33,48 +48,36 @@ export class CadastroCursosComponent implements OnInit {
     });
 
   }
-  onSubmit() {
-    if (this.cadastro.valid) {
-      this.submitted = true;
-      console.log(this.cadastro.value);
-      if (this.cadastro.valid) {
-        console.log('submit');
-        this.ok.newCurso(this.cadastro.value).subscribe(
-          success => console.log('sucesso'),
-          error => console.error(error),
-          () => console.log('request completo')
-        );
-      }
-    } else {
-      console.log('cadastro invalido');
-      this.confirmaCadastro(this.cadastro);
-    }
-  }
 
-  confirmaCadastro(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(campo => {
-      console.log(campo);
-      const confirmar = formGroup.get(campo);
-      confirmar.markAsDirty();
-      if (confirmar instanceof FormGroup) {
-        this.confirmaCadastro(confirmar);
-      }
+  uptateCadastro(curso) {
+    this.cadastro.patchValue({
+       id: curso.id,
+       instituicao: curso.instituicao,
+       cursos: curso.cursos,
+       data: curso.data,
+       cargaH: curso.cargaH,
+       descricao: curso.descricao,
+       urlFoto: curso.urlFoto,
+       linkCurso: curso.linkCurso
     });
   }
 
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.cadastro.value);
+    if (this.cadastro.valid) {
+      console.log('submit');
+      this.ok.newCurso(this.cadastro.value).subscribe(
+        success => console.log('sucesso'),
+        error => console.error(error),
+        () => console.log('request completo')
+      );
+    }
+  }
   onCancel() {
     this.submitted = false;
     this.cadastro.reset();
   }
 
-  verificaValidTouched(campo) {
-    return !this.cadastro.get(campo).valid && this.cadastro.get(campo).touched || this.cadastro.get(campo).dirty;
-  }
 
-  aplicaCssErro(campo) {
-    return {
-      'has-error': this.verificaValidTouched(campo),
-      'has-feedback': this.verificaValidTouched(campo)
-    }
-  }
 }

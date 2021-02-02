@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 import { Registro } from '../shared/models/registros';
 
-import { delay, tap } from 'rxjs/operators'
+import { delay, take, tap } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 
 
@@ -25,6 +25,10 @@ export class TaOkService {
         delay(2000),
         tap(console.log)
       );
+  }
+
+  localizaID(id){
+    return this.http.get(`${this.API}/${id}`).pipe(take(1));
   }
 
   newCurso(registros: Registro): Observable<Registro>{

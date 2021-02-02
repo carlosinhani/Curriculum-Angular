@@ -5,8 +5,9 @@ import { CadastroCursosComponent } from './cadastro-cursos/CadastroCursosCompone
 import { CursosComponent } from './cursos.lista/cursos.component';
 
 const routes: Routes = [
-  { path: '', component: CursosComponent},
-  { path: 'cadastro', component: CadastroCursosComponent}
+  { path: '', component: CursosComponent },
+  { path: 'cadastro', component: CadastroCursosComponent },
+  { path: 'editar/:id', component: CadastroCursosComponent}
 ];
 
 @NgModule({

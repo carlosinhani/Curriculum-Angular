@@ -1,36 +1,57 @@
-<div class="card">
-  <div class="card-header">
-    <div class="float-left">
-      <h4>Cursos</h4>
+<body class="body">
+  <div class="card">
+    <div class="card-header body">
+      <div class="float-left">
+        <h4>Cursos</h4>
+      </div>
+      <div class="float-right">
+        <button
+          type="button"
+          class="btn btn-primary"
+          [routerLink]="['cadastro']"
+        >
+          Novo Curso
+        </button>
+      </div>
     </div>
-    <div class="float-right">
-      <button type="button" class="btn btn-primary" [routerLink]="['cadastro']">
-        Novo Curso
-      </button>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="margin">Cursos</th>
+            <th class="center">Descrição</th>
+            <th>Data</th>
+            <th>Horas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let curso of cursos">
+            <td>{{ curso.cursos }}</td>
+            <td>{{ curso.descricao }}</td>
+            <td>{{ curso.data }}</td>
+            <td>{{ curso.cargaH }}</td>
+            <td><img src="{{ curso.urlFoto }}" alt="sem foto" /></td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-success mb-1 btn-sm">
+                  <a href="{{ curso.linkCurso }}" target="_blank"
+                    >Certificado</a
+                  >
+                </button>
+                <button
+                  class="btn btn-outline-primary mb-1 btn-sm"
+                  (click)="onEdit(curso.id)"
+                >
+                  Editar
+                </button>
+                <button class="btn btn-outline-danger mb-1 btn-sm">
+                  Deletar
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <div class="card-body">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th class="margin">Cursos</th>
-          <th class="center">Certificados</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let curso of cursos">
-          <p>{{ curso.cursos }}</p>
-          <td><img src="{{ curso.urlFoto }}" alt="sem foto"></td>
-          <td>
-            <span class="float-right">
-              <button class="btn btn-warning ">
-                Visualizar
-              </button>
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+</body>

@@ -14,7 +14,6 @@ import { MsgModule } from '../shared/msg/msg.module';
   declarations: [
     CursosComponent,
     CadastroCursosComponent,
-
   ],
   imports: [
     CommonModule,
