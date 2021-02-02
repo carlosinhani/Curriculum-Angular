@@ -34,15 +34,24 @@ export class CadastroCursosComponent implements OnInit {
 
   }
   onSubmit() {
-    this.submitted = true;
-    console.log(this.cadastro.value);
     if (this.cadastro.valid) {
-      console.log('submit');
-      this.ok.newCurso(this.cadastro.value).subscribe(
-        success => console.log('sucesso'),
-        error => console.error(error),
-        () => console.log('request completo')
-      );
+      this.submitted = true;
+      console.log(this.cadastro.value);
+      if (this.cadastro.valid) {
+        console.log('submit');
+        this.ok.newCurso(this.cadastro.value).subscribe(
+          success => console.log('sucesso'),
+          error => console.error(error),
+          () => console.log('request completo')
+        );
+      }
+    } else {
+      console.log('cadastro invalido');
+      Object.keys(this.cadastro.controls).forEach(campo => {
+        console.log(campo);
+        const confirmar = this.cadastro.get(campo);
+        confirmar.markAsDirty();
+      });
     }
   }
 
@@ -51,11 +60,11 @@ export class CadastroCursosComponent implements OnInit {
     this.cadastro.reset();
   }
 
-  verificaValidTouched(campo){
-    return !campo.valid && campo.touched;
+  verificaValidTouched(campo) {
+    return !this.cadastro.get(campo).valid && this.cadastro.get(campo).touched || this.cadastro.get(campo).dirty;
   }
 
-  aplicaCssErro(campo){
+  aplicaCssErro(campo) {
     return {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo)

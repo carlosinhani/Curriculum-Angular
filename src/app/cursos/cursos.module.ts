@@ -6,6 +6,8 @@ import { CursosRoutingModule } from './cursos-routing.module';
 import { CursosComponent } from './cursos.lista/cursos.component';
 import { CadastroCursosComponent } from "./cadastro-cursos/CadastroCursosComponent";
 
+import { MsgModule } from '../shared/msg/msg.module';
+
 
 
 @NgModule({
@@ -19,8 +21,7 @@ import { CadastroCursosComponent } from "./cadastro-cursos/CadastroCursosCompone
     CursosRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-
-
+    MsgModule
   ]
 })
 export class CursosModule { }

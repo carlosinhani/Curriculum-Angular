@@ -4,19 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CampoControlErroComponent } from './shared/campo-control-erro/campo-control-erro.component';
-
-
+import { CursosModule } from './cursos/cursos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CampoControlErroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CursosModule
 
   ],
   providers: [],
