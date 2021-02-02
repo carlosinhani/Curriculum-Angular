@@ -34,27 +34,37 @@
         >
         </app-campo-control-erro>
       </div>
-      <div class="form-group col-md-2">
-        <label for="input">Data</label>
+      <div class="form-group col-md-2" [ngClass]="aplicaCssErro('data')">
+        <label for="data">Data</label>
         <input
           type="date"
           class="form-control"
           id="data"
           formControlName="data"
         />
+        <app-campo-control-erro
+          [mostrarErro]="verificaValidTouched('data')"
+          msgErro="Data obrigátorio."
+        >
+        </app-campo-control-erro>
       </div>
-      <div class="form-group col-md-2">
-        <label for="input">Carga Horária</label>
+      <div class="form-group col-md-2" [ngClass]="aplicaCssErro('cargaH')">
+        <label for="cargaH">Carga Horária</label>
         <input
           type="text"
           class="form-control"
           id="cargaH"
           formControlName="cargaH"
-          placeholder="Quant: Horas do Curso"
+          placeholder="Quant: Horas Curso"
         />
+        <app-campo-control-erro
+          [mostrarErro]="verificaValidTouched('cargaH')"
+          msgErro="Horas obrigatório."
+        >
+        </app-campo-control-erro>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="aplicaCssErro('descricao')">
       <label for="descricao">Descrição do Curso</label>
       <input
         type="text"
@@ -62,8 +72,13 @@
         id="descricao"
         formControlName="descricao"
       />
+      <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched('descricao')"
+        msgErro="Descrição obrigatório."
+      >
+      </app-campo-control-erro>
     </div>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="aplicaCssErro('urlFoto')">
       <label for="urlFoto">Imagem do Certificado</label>
       <input
         type="text"
@@ -72,16 +87,26 @@
         formControlName="urlFoto"
         placeholder="Colocar a Foto"
       />
+      <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched('urlFoto')"
+        msgErro="Colocar link da imagem ."
+      >
+      </app-campo-control-erro>
     </div>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="aplicaCssErro('linkCurso')">
       <label for="linkCurso">Link do Curso</label>
       <input
         type="url"
         class="form-control"
         id="linkCurso"
         formControlName="linkCurso"
-        placeholder="Colocar o link do curso"
+        placeholder="Colocar link do curso"
       />
+      <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched('linkCurso')"
+        msgErro="Colocar link do curso."
+      >
+      </app-campo-control-erro>
     </div>
 
     <div class="custom-control custom-switch">

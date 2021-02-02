@@ -59,6 +59,16 @@
       "urlFoto": "https://hermes.digitalinnovation.one/certificates/cover/DCAFFBAD.jpg",
       "linkCurso": "https://certificates.digitalinnovation.one/DCAFFBAD",
       "id": "6"
+    },
+    {
+      "instituicao": "Digital Innovation One",
+      "cursos": "Introdução ao Git e Controle de Versões",
+      "data": "2020-09-10",
+      "cargaH": "2 horas",
+      "descricao": "Aprenda o que é controle de versão e como trabalhar com o Git, assim como os seus principais comandos.",
+      "urlFoto": "https://hermes.digitalinnovation.one/certificates/cover/A064FDF2.jpg",
+      "linkCurso": "https://certificates.digitalinnovation.one/A064FDF2",
+      "id": "fn-yHkX"
     }
   ]
 }

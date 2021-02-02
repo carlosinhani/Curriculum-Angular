@@ -27,7 +27,7 @@ export class CadastroCursosComponent implements OnInit {
       cursos: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
       data: [null, [Validators.required]],
       cargaH: [null, [Validators.required]],
-      descricao: [null, [Validators.required]],
+      descricao: [null, [Validators.minLength(5)]],
       urlFoto: [null, [Validators.minLength(10)]],
       linkCurso: [null, [Validators.minLength(10)]]
     });
@@ -47,12 +47,19 @@ export class CadastroCursosComponent implements OnInit {
       }
     } else {
       console.log('cadastro invalido');
-      Object.keys(this.cadastro.controls).forEach(campo => {
-        console.log(campo);
-        const confirmar = this.cadastro.get(campo);
-        confirmar.markAsDirty();
-      });
+      this.confirmaCadastro(this.cadastro);
     }
+  }
+
+  confirmaCadastro(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(campo => {
+      console.log(campo);
+      const confirmar = formGroup.get(campo);
+      confirmar.markAsDirty();
+      if (confirmar instanceof FormGroup) {
+        this.confirmaCadastro(confirmar);
+      }
+    });
   }
 
   onCancel() {
