@@ -50,4 +50,15 @@ export class CadastroCursosComponent implements OnInit {
     this.submitted = false;
     this.cadastro.reset();
   }
+
+  verificaValidTouched(campo){
+    return !campo.valid && campo.touched;
+  }
+
+  aplicaCssErro(campo){
+    return {
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    }
+  }
 }
