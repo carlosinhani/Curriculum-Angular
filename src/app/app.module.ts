@@ -5,6 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CursosModule } from './cursos/cursos.module';
+import { MsgModule } from './shared/msg/msg.module';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +18,9 @@ import { CursosModule } from './cursos/cursos.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CursosModule
+    CursosModule,
+    ModalModule.forRoot(),
+    MsgModule
 
   ],
   providers: [],

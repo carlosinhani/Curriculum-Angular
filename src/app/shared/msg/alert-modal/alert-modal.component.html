@@ -1,1 +1,12 @@
-<p>alert-modal works!</p>
+<div class="alert alert-{{ corMsg }} margin" role="alert">
+  {{ msg }}
+  <button
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+    (click)="onClose()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
