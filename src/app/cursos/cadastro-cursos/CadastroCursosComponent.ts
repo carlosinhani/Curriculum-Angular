@@ -54,16 +54,22 @@ export class CadastroCursosComponent implements OnInit {
     console.log(this.cadastro.value);
     if (this.cadastro.valid) {
       console.log('submit');
-      this.ok.newCurso(this.cadastro.value).subscribe(
+
+      let msgSuccess = 'Curso criado com sucesso!';
+      let msgError = 'Erro ao criar curso';
+      if (this.cadastro.value.id) {
+        msgSuccess = 'Curso atulizado com sucesso!';
+        msgError = 'Erro ao criar curso';
+      }
+
+      this.ok.save(this.cadastro.value).subscribe(
         success => {
-          this.modal.alertMsgSuccess('Curso criado Sucesso!');
+          this.modal.alertMsgSuccess(msgSuccess);
           this.location.back();
         },
-        error => this.modal.alertMsgWarning('Erro ao Criar Curso'),
-        () => console.log('request completo')
+        error => this.modal.alertMsgWarning(msgError)
       );
     }
-
   }
   onCancel() {
     this.submitted = false;

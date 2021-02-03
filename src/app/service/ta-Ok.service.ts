@@ -31,12 +31,18 @@ export class TaOkService {
     return this.http.get<Registro>(`${this.API}/${id}`).pipe(take(1));
   }
 
-  newCurso(curso) {
+ private newCurso(curso) {
     return this.http.post(this.API, curso).pipe(take(1));
   }
 
-//   update(curso) {
-//       return this.http.put(`${this.API}/${curso.id}`, curso).pipe(take(1));
-//   }
+ private update(curso) {
+      return this.http.put(`${this.API}/${curso.id}`, curso).pipe(take(1));
+  }
 
+  save(curso) {
+    if (curso.id) {
+      return this.update(curso);
+    }
+    return this.newCurso(curso);
+  }
 }

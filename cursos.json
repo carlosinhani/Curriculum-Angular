@@ -89,6 +89,26 @@
       "descricao": "Nesse curso o especialista vai contar um pouco sobre a história do HTML5 e do CSS3, explicar como funciona a estrutura básica dessas tecnologias, sua semântica, principais elementos e comandos.",
       "urlFoto": "https://hermes.digitalinnovation.one/certificates/cover/37AFA923.jpg",
       "linkCurso": "https://certificates.digitalinnovation.one/37AFA923"
+    },
+    {
+      "id": "IANeQkL",
+      "instituicao": "Digital Innovetion One",
+      "cursos": "Recriando a página inicial do Instagram",
+      "data": "2020-09-16",
+      "cargaH": "2 horas",
+      "descricao": "Nesse projeto você terá o desafio de reconstruir a página inicial de login do Instagram, no qual será abordado o conceito sobre CSS utilizando Flexbox, uma metodologia de posicionamento de elementos em tela mais utilizada no mercado assim como conceitos de responsividade, além disso a expert disponibiliza todo o material necessário em seu GitHub para que você possa realizar o seu projeto.",
+      "urlFoto": "https://hermes.digitalinnovation.one/certificates/cover/D2D01A88.jpg",
+      "linkCurso": "https://certificates.digitalinnovation.one/D2D01A88"
+    },
+    {
+      "id": "4WCE3Ej",
+      "instituicao": "Digital Innovation One",
+      "cursos": "Conceitos de responsividade e experiência do usuário ",
+      "data": "2020-09-17",
+      "cargaH": "1 hora",
+      "descricao": "Esse curso vai ensinar sobre a experiência do usuário e interface do usuário, ou seja, como ele interage com a plataforma web, se ela é intuitiva e de fácil entendimento para quem acessa.",
+      "urlFoto": "https://hermes.digitalinnovation.one/certificates/cover/B578A212.jpg",
+      "linkCurso": "https://certificates.digitalinnovation.one/B578A212"
     }
   ]
 }
