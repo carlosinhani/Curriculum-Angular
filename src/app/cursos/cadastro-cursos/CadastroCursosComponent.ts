@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { TaOkService } from './../../service/ta-Ok.service';
+import { MsgService } from './../../shared/msg/msg.service';
 
 import { map, switchMap } from 'rxjs/operators';
+
+
 
 
 @Component({
@@ -22,7 +26,9 @@ export class CadastroCursosComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private ok: TaOkService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private modal: MsgService,
+    private location: Location
 
   ) { }
 
@@ -49,6 +55,7 @@ export class CadastroCursosComponent implements OnInit {
 
   }
 
+
   uptateCadastro(curso) {
     this.cadastro.patchValue({
       id: curso.id,
@@ -67,17 +74,14 @@ export class CadastroCursosComponent implements OnInit {
     console.log(this.cadastro.value);
     if (this.cadastro.valid) {
       console.log('submit');
-      if (this.cadastro.value.id) {
-        this.ok.update(this.cadastro.value).subscribe(
-
-        )
-      } else {
-        this.ok.newCurso(this.cadastro.value).subscribe(
-          success => console.log('sucesso'),
-          error => console.error(error),
-          () => console.log('request completo')
-        );
-      }
+      this.ok.newCurso(this.cadastro.value).subscribe(
+        success => {
+          this.modal.alertMsgSuccess('Curso criado Sucesso!');
+          this.location.back();
+        },
+        error => this.modal.alertMsgWarning('Erro ao Criar Curso'),
+        () => console.log('request completo')
+      );
     }
 
   }

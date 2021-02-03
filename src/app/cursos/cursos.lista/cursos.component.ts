@@ -4,11 +4,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Registro } from 'src/app/shared/models/registros';
 import { TaOkService } from '../../service/ta-Ok.service';
 import { AlertModalComponent } from 'src/app/shared/msg/alert-modal/alert-modal.component';
+import { MsgService } from 'src/app/shared/msg/msg.service';
 
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Observable } from 'rxjs/internal/Observable';
 import { empty, Subject } from 'rxjs';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { catchError } from 'rxjs/operators';
+
 
 
 @Component({
@@ -22,11 +24,11 @@ export class CursosComponent implements OnInit {
   // cursos: Registro[];
   cursos$: Observable<Registro[]>;
   error$ = new Subject<boolean>();
-  bsModalRef: BsModalRef;
+
 
   constructor(
     private ok: TaOkService,
-    private modalService: BsModalService,
+    private msgService: MsgService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -57,9 +59,7 @@ export class CursosComponent implements OnInit {
   }
 
   handleError(){
-    this.bsModalRef = this.modalService.show(AlertModalComponent);
-    this.bsModalRef.content.corMsg = 'warning';
-    this.bsModalRef.content.msg = 'Erro ao carregar cursos.';
+   this.msgService.alertMsgWarning('Erro ao carregar cursos.')
   }
 
   onEdit(id) {
