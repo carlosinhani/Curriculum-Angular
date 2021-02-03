@@ -29,12 +29,12 @@ export class CadastroCursosComponent implements OnInit {
   ngOnInit() {
 
 
-     this.route.params
-     .pipe(
-       map((params: any) => params['id']),
-       switchMap(id => this.ok.localizaID(id))
-     )
-     .subscribe(curso => this.uptateCadastro(curso));
+    this.route.params
+      .pipe(
+        map((params: any) => params['id']),
+        switchMap(id => this.ok.localizaID(id))
+      )
+      .subscribe(curso => this.uptateCadastro(curso));
 
     this.cadastro = this.fb.group({
       id: [null],
@@ -51,14 +51,14 @@ export class CadastroCursosComponent implements OnInit {
 
   uptateCadastro(curso) {
     this.cadastro.patchValue({
-       id: curso.id,
-       instituicao: curso.instituicao,
-       cursos: curso.cursos,
-       data: curso.data,
-       cargaH: curso.cargaH,
-       descricao: curso.descricao,
-       urlFoto: curso.urlFoto,
-       linkCurso: curso.linkCurso
+      id: curso.id,
+      instituicao: curso.instituicao,
+      cursos: curso.cursos,
+      data: curso.data,
+      cargaH: curso.cargaH,
+      descricao: curso.descricao,
+      urlFoto: curso.urlFoto,
+      linkCurso: curso.linkCurso
     });
   }
 
@@ -67,12 +67,19 @@ export class CadastroCursosComponent implements OnInit {
     console.log(this.cadastro.value);
     if (this.cadastro.valid) {
       console.log('submit');
-      this.ok.newCurso(this.cadastro.value).subscribe(
-        success => console.log('sucesso'),
-        error => console.error(error),
-        () => console.log('request completo')
-      );
+      if (this.cadastro.value.id) {
+        this.ok.update(this.cadastro.value).subscribe(
+
+        )
+      } else {
+        this.ok.newCurso(this.cadastro.value).subscribe(
+          success => console.log('sucesso'),
+          error => console.error(error),
+          () => console.log('request completo')
+        );
+      }
     }
+
   }
   onCancel() {
     this.submitted = false;

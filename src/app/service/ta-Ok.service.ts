@@ -28,11 +28,15 @@ export class TaOkService {
   }
 
   localizaID(id){
-    return this.http.get(`${this.API}/${id}`).pipe(take(1));
+    return this.http.get<Registro>(`${this.API}/${id}`).pipe(take(1));
   }
 
   newCurso(registros: Registro): Observable<Registro>{
     return this.http.post<Registro>(this.API, registros);
+  }
+
+  update(curso) {
+      return this.http.put(`${this.API}/${curso.id}`, curso).pipe(take(1));
   }
 
 }

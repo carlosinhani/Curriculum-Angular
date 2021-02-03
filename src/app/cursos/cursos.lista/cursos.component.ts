@@ -28,4 +28,5 @@ export class CursosComponent implements OnInit {
   onEdit(id) {
     this.router.navigate(['editar', id], { relativeTo: this.route })
   }
+
 }
