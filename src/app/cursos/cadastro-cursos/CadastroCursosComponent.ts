@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -23,6 +23,7 @@ export class CadastroCursosComponent implements OnInit {
   cadastro: FormGroup;
   submitted = false;
 
+
   constructor(
     private fb: FormBuilder,
     private ok: TaOkService,
@@ -44,10 +45,11 @@ export class CadastroCursosComponent implements OnInit {
       cargaH: [curso.cargaH, [Validators.required]],
       descricao: [curso.descricao, [Validators.minLength(5)]],
       urlFoto: [curso.urlFoto, [Validators.minLength(10)]],
-      linkCurso: [curso.linkCurso, [Validators.minLength(10)]]
+      linkCurso: [curso.linkCurso, [Validators.minLength(10)]],
     });
 
   }
+
 
   onSubmit() {
     this.submitted = true;
@@ -75,6 +77,4 @@ export class CadastroCursosComponent implements OnInit {
     this.submitted = false;
     this.cadastro.reset();
   }
-
-
 }

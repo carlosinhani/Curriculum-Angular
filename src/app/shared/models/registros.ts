@@ -6,7 +6,7 @@ export interface Registro {
   cargaH: string;
   descricao?: string;
   urlFoto?: string;
-  linkCurso?: string
+  linkCurso?: string;
 }
 
 
