@@ -34,39 +34,19 @@ export class CadastroCursosComponent implements OnInit {
 
   ngOnInit() {
 
-
-    this.route.params
-      .pipe(
-        map((params: any) => params['id']),
-        switchMap(id => this.ok.localizaID(id))
-      )
-      .subscribe(curso => this.uptateCadastro(curso));
+    const curso = this.route.snapshot.data['curso'];
 
     this.cadastro = this.fb.group({
-      id: [null],
-      instituicao: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
-      cursos: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
-      data: [null, [Validators.required]],
-      cargaH: [null, [Validators.required]],
-      descricao: [null, [Validators.minLength(5)]],
-      urlFoto: [null, [Validators.minLength(10)]],
-      linkCurso: [null, [Validators.minLength(10)]]
+      id: [curso.id],
+      instituicao: [curso.instituicao, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
+      cursos: [curso.cursos, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
+      data: [curso.data, [Validators.required]],
+      cargaH: [curso.cargaH, [Validators.required]],
+      descricao: [curso.descricao, [Validators.minLength(5)]],
+      urlFoto: [curso.urlFoto, [Validators.minLength(10)]],
+      linkCurso: [curso.linkCurso, [Validators.minLength(10)]]
     });
 
-  }
-
-
-  uptateCadastro(curso) {
-    this.cadastro.patchValue({
-      id: curso.id,
-      instituicao: curso.instituicao,
-      cursos: curso.cursos,
-      data: curso.data,
-      cargaH: curso.cargaH,
-      descricao: curso.descricao,
-      urlFoto: curso.urlFoto,
-      linkCurso: curso.linkCurso
-    });
   }
 
   onSubmit() {
