@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Registro } from 'src/app/shared/models/registros';
 import { TaOkService } from '../../service/ta-Ok.service';
-import { AlertModalComponent } from 'src/app/shared/msg/alert-modal/alert-modal.component';
 import { MsgService } from 'src/app/shared/msg/msg.service';
 
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
@@ -21,13 +20,18 @@ import { catchError } from 'rxjs/operators';
 })
 export class CursosComponent implements OnInit {
 
-  // cursos: Registro[];
+  deleteModalRef: BsModalRef;
+  @ViewChild('deleteModal') deleteModal;
+
   cursos$: Observable<Registro[]>;
   error$ = new Subject<boolean>();
+
+  cursoSelecionado: Registro;
 
 
   constructor(
     private ok: TaOkService,
+    private modalService: BsModalService,
     private msgService: MsgService,
     private router: Router,
     private route: ActivatedRoute
@@ -48,22 +52,45 @@ export class CursosComponent implements OnInit {
         })
       );
     this.ok.list()
-    .pipe(
-      catchError(error => empty())
-    )
-    .subscribe(
-      dados => {
-        console.log(dados);
-      }
-    )
+      .pipe(
+        catchError(error => empty())
+      )
+      .subscribe(
+        dados => {
+          console.log(dados);
+        }
+      )
   }
 
-  handleError(){
-   this.msgService.alertMsgWarning('Erro ao carregar cursos.')
+  handleError() {
+    this.msgService.alertMsgWarning('Erro ao carregar cursos.')
   }
 
   onEdit(id) {
     this.router.navigate(['editar', id], { relativeTo: this.route })
+  }
+
+  onDelete(curso) {
+    this.cursoSelecionado = curso;
+    this.deleteModalRef = this.modalService.show(this.deleteModal, { class: 'modal-sm' });
+  }
+
+  onConfirmDelete() {
+    this.ok.remove(this.cursoSelecionado.id)
+      .subscribe(
+        success => {
+          this.onRefresh(),
+            this.deleteModalRef.hide();
+        },
+        error => {
+          this.msgService.alertMsgWarning('Erro ao deletar curso.')
+          this.deleteModalRef.hide();
+        }
+      );
+  }
+
+  onDeclineDelete() {
+    this.deleteModalRef.hide();
   }
 
 }
