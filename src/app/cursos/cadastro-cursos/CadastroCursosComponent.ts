@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { TaOkService } from './../../service/ta-Ok.service';
 import { MsgService } from './../../shared/msg/msg.service';
-
-import { map, switchMap } from 'rxjs/operators';
-
-
 
 
 @Component({

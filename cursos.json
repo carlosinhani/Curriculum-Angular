@@ -1,9 +1,9 @@
 {
   "cursos": [
     {
-      "id": "1",
-      "instituicao": "Digital Innovation One ",
-      "cursos": "Programação para internet com JavaScript ",
+      "id": 1,
+      "instituicao": "Digital Innovation One",
+      "cursos": "Programação para internet com JavaScript",
       "data": "2020-08-31",
       "cargaH": "2 horas",
       "descricao": "JavaScript é uma das mais importantes linguagens front-end, e nesse curso você entenderá o porquê disso e como trabalhar com ela.",
@@ -11,11 +11,11 @@
       "linkCurso": "https://certificates.digitalinnovation.one/4277C937"
     },
     {
-      "id": "2",
+      "id": 2,
       "instituicao": "Digital Innovation One",
       "cursos": "Criando aplicações móveis multiplataforma com React Native",
-      "data": "2020-09-02",
-      "cargaH": "4 horas",
+      "data": "2020-09-20",
+      "cargaH": "2 horas",
       "descricao": "Aprenda React Native da introdução ao desenvolvimento de seu próprio projeto mobile híbrido final, e acelere mais a sua carreira de desenvolvedor front-end.",
       "urlFoto": "https://hermes.digitalinnovation.one/certificates/cover/390212EA.jpg",
       "linkCurso": "https://certificates.digitalinnovation.one/390212EA"

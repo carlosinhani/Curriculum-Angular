@@ -1,0 +1,83 @@
+<body>
+  <form autocomplete="off" novalidate>
+    <div class="form-group">
+      <label for="instituicao" class="control-label"
+        >Nome da Instituição ou Plataforma de Estudo</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="instituicao"
+        formControlName="instituicao"
+        placeholder="Instituição ou Plataforma"
+      />
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label for="cursos" class="contro-label">Cursos</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cursos"
+          formControlName="cursos"
+          placeholder="Curso"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label for="data">Data</label>
+        <input
+          type="date"
+          class="form-control"
+          id="data"
+          formControlName="data"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label for="cargaH">Carga Horária</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cargaH"
+          formControlName="cargaH"
+          placeholder="Quant: Horas Curso"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição do Curso</label>
+      <input
+        type="text"
+        class="form-control"
+        id="descricao"
+        formControlName="descricao"
+      />
+    </div>
+    <div class="form-group">
+      <label for="urlFoto">Imagem do Certificado</label>
+      <input
+        type="text"
+        class="form-control"
+        id="urlFoto"
+        formControlName="urlFoto"
+        placeholder="Colocar a Foto"
+      />
+    </div>
+    <div class="form-group">
+      <label for="linkCurso">Link do Curso</label>
+      <input
+        type="url"
+        class="form-control"
+        id="linkCurso"
+        formControlName="linkCurso"
+        placeholder="Colocar link do curso"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg">
+      Salvar
+    </button>
+    <button type="button" class="btn btn-danger btn-lg">
+      Cancelar
+    </button>
+  </form>
+</body>

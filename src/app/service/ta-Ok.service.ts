@@ -5,7 +5,7 @@ import { environment } from './../../environments/environment';
 import { Registro } from '../shared/models/registros';
 
 import { delay, take, tap } from 'rxjs/operators'
-import { Observable } from 'rxjs';
+
 
 
 @Injectable({
