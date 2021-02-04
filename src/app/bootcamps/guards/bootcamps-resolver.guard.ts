@@ -3,12 +3,12 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Resolve } from '@angular/r
 
 import { BootcampsService } from './../../service/bootcamps.service';
 import { Registro } from 'src/app/shared/models/registros';
+
 import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-
 
 export class BootcampsResolverGuard implements Resolve<Registro> {
 

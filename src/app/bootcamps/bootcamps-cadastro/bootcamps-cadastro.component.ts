@@ -27,17 +27,17 @@ export class BootcampsCadastroComponent implements OnInit {
 
   ngOnInit() {
 
-    const curso = this.route.snapshot.data['curso'];
+    const bootscamp = this.route.snapshot.data['bootscamp'];
 
     this.cadastro = this.fb.group({
-      id: [curso.id],
-      instituicao: [curso.instituicao, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
-      cursos: [curso.cursos, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
-      data: [curso.data, [Validators.required]],
-      cargaH: [curso.cargaH, [Validators.required]],
-      descricao: [curso.descricao, [Validators.minLength(5)]],
-      urlFoto: [curso.urlFoto, [Validators.minLength(10)]],
-      linkCurso: [curso.linkCurso, [Validators.minLength(10)]],
+      id: [bootscamp.id],
+      instituicao: [bootscamp.instituicao, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
+      cursos: [bootscamp.cursos, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
+      data: [bootscamp.data, [Validators.required]],
+      cargaH: [bootscamp.cargaH, [Validators.required]],
+      descricao: [bootscamp.descricao, [Validators.minLength(5)]],
+      urlFoto: [bootscamp.urlFoto, [Validators.minLength(10)]],
+      linkCurso: [bootscamp.linkCurso, [Validators.minLength(10)]],
     });
 
   }
@@ -49,11 +49,11 @@ export class BootcampsCadastroComponent implements OnInit {
     if (this.cadastro.valid) {
       console.log('submit');
 
-      let msgSuccess = 'Curso criado com sucesso!';
-      let msgError = 'Erro ao criar curso';
+      let msgSuccess = 'Bootcamp criado com sucesso!';
+      let msgError = 'Erro ao criar bootcamp';
       if (this.cadastro.value.id) {
-        msgSuccess = 'Curso atulizado com sucesso!';
-        msgError = 'Erro ao criar curso';
+        msgSuccess = 'Bootcamp atulizado com sucesso!';
+        msgError = 'Erro ao criar Bootcamp';
       }
 
       this.bootService.save(this.cadastro.value).subscribe(

@@ -3,7 +3,7 @@
   <div class="card">
     <div class="card-header body">
       <div class="float-left">
-        <h4>Cursos</h4>
+        <h4>BootCamps</h4>
       </div>
       <div class="float-right">
         <button
@@ -13,26 +13,29 @@
         >
           Novo Curso
         </button>
-        <button type="button" class="btn btn-secondary">
+        <button type="button" class="btn btn-secondary" (click)="onRefresh()">
           Atualizar
         </button>
       </div>
     </div>
     <div class="card-body">
-      <!-- <table
+      <table
         class="table table-hover"
-        *ngIf="cursos | async as cursos; else loading"
+        *ngIf="cursos$ | async as cursos; else loading"
       >
         <thead>
-          <tr>
-            <th class="margin">Cursos</th>
-            <th class="center">Descrição</th>
-            <th>Data</th>
-            <th>Horas</th>
+          <tr class="center">
+            <th>Instituição de ensino</th>
+            <th>Bootcamps</th>
+            <th>Descrição</th>
+            <th>Data bootcamps </th>
+            <th>Quantidate Horas</th>
+            <th>Certificados</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let curso of cursos">
+          <tr class="center" *ngFor="let curso of cursos">
+            <td>{{ curso.instituicao }}</td>
             <td>{{ curso.cursos }}</td>
             <td>{{ curso.descricao }}</td>
             <td>{{ curso.data }}</td>
@@ -47,13 +50,13 @@
                 </button>
                 <button
                   class="btn btn-outline-primary mb-1 btn-sm"
-
+                  (click)="onEdit(curso.id)"
                 >
                   Editar
                 </button>
                 <button
                   class="btn btn-outline-danger mb-1 btn-sm"
-
+                  (click)="onDelete(curso)"
                 >
                   Deletar
                 </button>
@@ -61,19 +64,19 @@
             </td>
           </tr>
         </tbody>
-      </table> -->
+      </table>
       <ng-template #loading>
-        <span>Carregando Cursos...</span>
+        <span>Carregando Bootcamps...</span>
       </ng-template>
     </div>
   </div>
   <ng-template #deleteModal>
     <div class="modal-body text-center">
-      <p>Deseja remover este curso?</p>
-      <button type="button" class="btn btn-success">
+      <p>Deseja remover este ?</p>
+      <button type="button" class="btn btn-success" (click)="onConfirmDelete()">
         Sim
       </button>
-      <button type="button" class="btn btn-danger">
+      <button type="button" class="btn btn-danger" (click)="onDeclineDelete()">
         Não
       </button>
     </div>

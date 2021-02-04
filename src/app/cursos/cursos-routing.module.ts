@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CadastroCursosComponent } from './cadastro-cursos/CadastroCursosComponent';
 
+import { CadastroCursosComponent } from './cadastro-cursos/CadastroCursosComponent';
 import { CursosComponent } from './cursos.lista/cursos.component';
 import { CursoResolverGuard } from './guards/curso-resolver.guard';
 

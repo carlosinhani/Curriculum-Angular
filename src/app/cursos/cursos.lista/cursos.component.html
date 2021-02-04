@@ -23,15 +23,18 @@
         *ngIf="cursos$ | async as cursos; else loading"
       >
         <thead>
-          <tr>
-            <th class="margin">Cursos</th>
-            <th class="center">Descrição</th>
-            <th>Data</th>
-            <th>Horas</th>
+          <tr class="center">
+            <th>Instituição de ensino</th>
+            <th>Cursos</th>
+            <th>Descrição</th>
+            <th>Data Cursos</th>
+            <th>Quantidate Horas</th>
+            <th>Certificados</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let curso of cursos">
+          <tr class="center" *ngFor="let curso of cursos">
+            <td>{{ curso.instituicao }}</td>
             <td>{{ curso.cursos }}</td>
             <td>{{ curso.descricao }}</td>
             <td>{{ curso.data }}</td>

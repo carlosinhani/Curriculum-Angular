@@ -1,0 +1,17 @@
+.body{
+  background-color: brown;
+  width: 100%;
+  right: 100%;
+}
+
+img {
+  width: 30%;
+  right: 30%;
+  display: block;
+  margin: auto;
+}
+
+.center{
+  text-align: center;
+}
+
