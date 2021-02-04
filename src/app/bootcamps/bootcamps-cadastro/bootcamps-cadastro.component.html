@@ -1,5 +1,5 @@
 <body>
-  <form autocomplete="off" novalidate>
+  <form autocomplete="off" novalidate [formGroup]="cadastro">
     <div class="form-group">
       <label for="instituicao" class="control-label"
         >Nome da Instituição ou Plataforma de Estudo</label
@@ -73,10 +73,10 @@
       />
     </div>
 
-    <button type="submit" class="btn btn-success btn-lg">
+    <button type="submit" class="btn btn-success btn-lg" (click)="onSubmit()">
       Salvar
     </button>
-    <button type="button" class="btn btn-danger btn-lg">
+    <button type="button" class="btn btn-danger btn-lg" (click)="onCancel()">
       Cancelar
     </button>
   </form>
