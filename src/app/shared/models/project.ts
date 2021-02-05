@@ -3,5 +3,5 @@ export interface gitHub {
   LFP: string;
   data: number;
   commit: number;
-  linkProj: string
+  linkProj?: string
 }
