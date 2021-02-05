@@ -9,7 +9,8 @@ import { MsgService } from 'src/app/shared/msg/msg.service';
 @Component({
   selector: 'app-bootcamps-cadastro',
   templateUrl: './bootcamps-cadastro.component.html',
-  styleUrls: ['./bootcamps-cadastro.component.css']
+  styleUrls: ['./bootcamps-cadastro.component.css'],
+  preserveWhitespaces: true
 })
 export class BootcampsCadastroComponent implements OnInit {
 
@@ -70,5 +71,3 @@ export class BootcampsCadastroComponent implements OnInit {
     this.cadastro.reset();
   }
 }
-
-

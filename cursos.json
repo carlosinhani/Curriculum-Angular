@@ -1,16 +1,6 @@
 {
   "cursos": [
     {
-      "id": 1,
-      "instituicao": "Digital Innovation One",
-      "cursos": "Programação com JavaScript",
-      "data": "2020-08-31",
-      "cargaH": "2 horas",
-      "descricao": "JavaScript é uma das mais importantes linguagens front-end e nesse curso você entenderá o porquê disso e como trabalhar com ela.",
-      "urlFoto": "https://hermes.digitalinnovation.one/courses/badge/3cd53359-923e-4cc6-ae36-1dea026d3c39.png",
-      "linkCurso": "https://certificates.digitalinnovation.one/4277C937"
-    },
-    {
       "id": 2,
       "instituicao": "Digital Innovation One",
       "cursos": "Criando aplicações móveis multiplataforma com React Native",
@@ -51,6 +41,26 @@
       "descricao": "Você aprenderá muito mais sobre os conceitos de desenvolvimento front-end utilizando o React.js para atuação em projetos e no desenvolvimento web, por meio de componentes da interface de usuários.",
       "urlFoto": "https://hermes.digitalinnovation.one/tracks/63a74cdb-b7ad-48aa-af40-19b466235de6.png",
       "linkCurso": "https://certificates.digitalinnovation.one/028FAD9C"
+    },
+    {
+      "id": "5LyMaIO",
+      "instituicao": "loiane.training",
+      "cursos": "Curso Angular completo",
+      "data": "2020-01-25",
+      "cargaH": "28 horas",
+      "descricao": "Curso de Angular completo, Introdução typeScript, Módulos, templates, Serviço e injeção de dependências, Property Binding e Interpolação, Class e Style binding, Event binding, Two-way data binding, Input properties, Output properties, Ciclo de vida do componente, Acesso ao Dom e ao Template com ViewChild",
+      "urlFoto": "https://hermes.digitalinnovation.one/courses/badge/db819c10-4676-433f-be0a-d0540cfe0796.png",
+      "linkCurso": "https://loiane.training/certificado/Rx1QL8vVXBXM48FnT6zH"
+    },
+    {
+      "id": "LlW0fyT",
+      "instituicao": "Workover",
+      "cursos": "Angular Completo",
+      "data": "2021-01-25",
+      "cargaH": "30 horas",
+      "descricao": "Curso de Angular completo código-fonte aberto e front-end em TypeScript liderado pela Equipe Angular do Google e por uma comunidade de indivíduos e corporações. Angular é uma reescrita completo do AngularJS, feito pela mesma equipe que o construiu.",
+      "urlFoto": "https://hermes.digitalinnovation.one/courses/badge/1796e5e7-c8e5-4518-903b-645f904005f6.png",
+      "linkCurso": "https://photos.google.com/photo/AF1QipPWsKB6d9pRjPUp1Zwgoth6C1BLj9jDknhwwAlJ"
     }
   ]
 }
