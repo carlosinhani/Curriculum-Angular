@@ -1,1 +1,63 @@
-<p>commit-proj works!</p>
+<body>
+  <form autocomplete="off" novalidate [formGroup]="cadastro">
+    <div class="form-group">
+      <label for="nomeProj" class="control-label"
+        >Nome do Projéto</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="nomeProj"
+        formControlName="nomeProj"
+        placeholder="nome Projeto"
+      />
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label for="lfp" class="contro-label">Linguagem de programação ou framework predominante</label>
+        <input
+          type="url"
+          class="form-control"
+          id="lfp"
+          formControlName="lfp"
+          placeholder="linguagem de programação ou framework"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label for="data">Data</label>
+        <input
+          type="date"
+          class="form-control"
+          id="data"
+          formControlName="data"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label for="commit">Total de Commits</label>
+        <input
+          type="text"
+          class="form-control"
+          id="commit"
+          formControlName="commit"
+          placeholder="Commits"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="linkProj">Link do Projeto</label>
+      <input
+        type="url"
+        class="form-control"
+        id="linkProj"
+        formControlName="linkProj"
+        placeholder="link do projeto"
+      />
+    </div>
+    <button type="submit" class="btn btn-success btn-lg" (click)="onSubmit()">
+      Salvar
+    </button>
+    <button type="button" class="btn btn-danger btn-lg" (click)="onCancel()">
+      Cancelar
+    </button>
+  </form>
+</body>

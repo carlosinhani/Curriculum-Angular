@@ -1,6 +1,7 @@
 export interface gitHub {
   id?: number;
-  LFP: string;
+  nomeProj:string;
+  lfp: string;
   data: number;
   commit: number;
   linkProj?: string

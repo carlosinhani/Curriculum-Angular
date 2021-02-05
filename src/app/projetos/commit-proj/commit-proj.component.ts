@@ -1,15 +1,18 @@
-import { ProjService } from './../../service/proj.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { MsgService } from 'src/app/shared/msg/msg.service';
 import { Location } from '@angular/common';
+
+import { ProjService } from './../../service/proj.service';
+import { MsgService } from 'src/app/shared/msg/msg.service';
+
 
 
 @Component({
   selector: 'commit-proj',
   templateUrl: './commit-proj.component.html',
-  styleUrls: ['./commit-proj.component.css']
+  styleUrls: ['./commit-proj.component.css'],
+  preserveWhitespaces: true
 })
 export class CommitProjComponent implements OnInit {
 
@@ -32,14 +35,14 @@ export class CommitProjComponent implements OnInit {
 
     this.cadastro = this.fb.group({
       id: [proj.id],
-      LFP: [proj.instituicao, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
+      nomeProj: [proj.nomeProj, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
+      lfp: [proj.lfp, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
       data: [proj.data, [Validators.required]],
-      commit: [proj.cargaH, [Validators.required]],
+      commit: [proj.commit, [Validators.required]],
       linkProj: [proj.linkCurso, [Validators.minLength(10)]],
     });
 
   }
-
 
   onSubmit() {
     this.submitted = true;
@@ -47,11 +50,11 @@ export class CommitProjComponent implements OnInit {
     if (this.cadastro.valid) {
       console.log('submit');
 
-      let msgSuccess = 'Curso criado com sucesso!';
-      let msgError = 'Erro ao criar curso';
+      let msgSuccess = 'Projeto criado com sucesso!';
+      let msgError = 'Erro ao criar projeto';
       if (this.cadastro.value.id) {
-        msgSuccess = 'Curso atulizado com sucesso!';
-        msgError = 'Erro ao criar curso';
+        msgSuccess = 'Projeto atulizado com sucesso!';
+        msgError = 'Erro ao criar projeto';
       }
 
       this.commit.save(this.cadastro.value).subscribe(

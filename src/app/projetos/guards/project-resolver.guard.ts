@@ -22,7 +22,8 @@ export class ProjectResolverGuard implements Resolve<gitHub> {
 
     return of({
       id: null,
-      LFP: null,
+      nomeProj: null,
+      lfp: null,
       data: null,
       commit: null,
       linkProj: null,
