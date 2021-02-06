@@ -1,1 +1,88 @@
-<p>trabalho works!</p>
+<body class="body">
+  <div class="card">
+    <div class="card-header body">
+      <div class="float-left">
+        <h4>Cursos</h4>
+      </div>
+      <div class="float-right">
+        <button
+          type="button"
+          class="btn btn-primary"
+          [routerLink]="['cadastro']"
+        >
+          Novo Curso
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="onRefresh()">
+          Atualizar
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <table
+        class="table table-hover"
+        *ngIf="cursos$ | async as cursos; else loading"
+      >
+        <thead>
+          <tr class="center">
+            <th>Nome da Empresa</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Telefone da empresa</th>
+            <th>Cargo</th>
+            <th>Tipo de Emprego</th>
+            <th>Período</th>
+            <th>Descrição do cargo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="center" *ngFor="let curso of cursos">
+            <td>{{ curso.nomeEmp }}</td>
+            <td>{{ curso.cit }}</td>
+            <td>{{ curso.est }}</td>
+            <td>{{ curso.tel }}</td>
+            <td>{{ curso.cargo }}</td>
+            <td>{{ curso.tEmpreg }}</td>
+            <td>{{ curso.data }}</td>
+            <td>{{ curso.descricao }}</td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-success mb-1 btn-sm">
+                  <a href="{{ curso.linkEmpresa }}" target="_blank"
+                    >Certificado</a
+                  >
+                </button>
+                <button
+                  class="btn btn-outline-primary mb-1 btn-sm"
+                  (click)="onEdit(curso.id)"
+                >
+                  Editar
+                </button>
+                <button
+                  class="btn btn-outline-danger mb-1 btn-sm"
+                  (click)="onDelete(curso)"
+                >
+                  Deletar
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #loading>
+        <span>Carregando Cursos...</span>
+      </ng-template>
+    </div>
+  </div>
+  <ng-template #deleteModal>
+    <div class="modal-body text-center">
+      <p>Deseja remover este curso?</p>
+      <button type="button" class="btn btn-success" (click)="onConfirmDelete()">
+        Sim
+      </button>
+      <button type="button" class="btn btn-danger" (click)="onDeclineDelete()">
+        Não
+      </button>
+    </div>
+  </ng-template>
+</body>
+

@@ -4,5 +4,5 @@ export interface gitHub {
   lfp: string;
   data: number;
   commit: number;
-  linkProj?: string
+  linkProj?: string;
 }

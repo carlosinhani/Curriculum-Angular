@@ -1,8 +1,8 @@
-import { TrabalhoResolverGuard } from './guards/trabalho-resolver.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TrabalhoCadastroComponent } from './trabalho-cadastro/trabalho-cadastro.component';
 
+import { TrabalhoResolverGuard } from './guards/trabalho-resolver.guard';
+import { TrabalhoCadastroComponent } from './trabalho-cadastro/trabalho-cadastro.component';
 import { TrabalhoComponent } from './trabalho/trabalho.component';
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'editar/:id',component: TrabalhoCadastroComponent,
+    path: 'editar/:id', component: TrabalhoCadastroComponent,
     resolve: {
       emprego: TrabalhoResolverGuard
     }

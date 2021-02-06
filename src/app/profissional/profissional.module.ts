@@ -5,13 +5,15 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ProfissionalRoutingModule } from './profissional-routing.module';
 import { TrabalhoComponent } from './trabalho/trabalho.component';
 import { TrabalhoCadastroComponent } from './trabalho-cadastro/trabalho-cadastro.component';
+
 import { MsgModule } from '../shared/msg/msg.module';
 
 
 @NgModule({
   declarations: [
     TrabalhoComponent,
-    TrabalhoCadastroComponent],
+    TrabalhoCadastroComponent
+  ],
   imports: [
     CommonModule,
     ProfissionalRoutingModule,

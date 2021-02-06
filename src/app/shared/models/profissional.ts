@@ -8,6 +8,6 @@ export interface Profissional {
   tEmpreg: string;
   data: string;
   descricao: string;
-  linkEmpresa: string
+  linkEmpresa: string;
 }
 

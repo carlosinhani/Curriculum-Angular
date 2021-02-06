@@ -10,6 +10,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class TrabalhoResolverGuard implements Resolve<Profissional> {
+
   constructor(
     private trabalho: TrabalhoService
   ) { }

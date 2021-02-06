@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { MsgService } from 'src/app/shared/msg/msg.service';
+import { MsgService } from './../../shared/msg/msg.service';
 import { TrabalhoService } from './../../service/trabalho.service';
 
 @Component({
@@ -40,7 +40,7 @@ export class TrabalhoCadastroComponent implements OnInit {
       tEmpreg: [emprego.tEmpreg, [Validators.minLength(5)]],
       data: [emprego.data, [Validators.minLength(3)]],
       descricao: [emprego.descricao, [Validators.required, Validators.minLength(3)]],
-      linkEmpresa: [emprego.linkEmpresa, [Validators.maxLength(10)]]
+      linkEmpresa: [emprego.linkEmpresa, [Validators.minLength(10)]]
     });
 
   }

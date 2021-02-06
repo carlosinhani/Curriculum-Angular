@@ -14,7 +14,7 @@
   "bootcamps": [
     {
       "id": "MSw6bIy",
-      "instituicao": "Digital Innovation One",
+      "instituicao": "Digital Innovation One ",
       "cursos": "HTML Web Developer",
       "data": "2020-10-07",
       "cargaH": "27 horas",
@@ -70,10 +70,21 @@
       "lfp": "https://hermes.digitalinnovation.one/tracks/3a10fc52-7df0-4d38-9d9c-e98f1e5f6c9a.png",
       "data": "2020-10-21",
       "commit": "2",
-      "linkProj": "https://github.com/carlosinhani/API_coin_market_cap"
+      "linkProj": null
     }
   ],
   "trabalho": [
-
+    {
+      "id": 1,
+      "nomeEmp": "Sollus",
+      "cit": "Assis",
+      "est": "São Paulo",
+      "tel": "33411100",
+      "cargo": "Almoxarife",
+      "tEmpreg": "Tempo Integral",
+      "data": "2014 a 2016",
+      "descricao": "Separeção de peça e controle de estoque",
+      "linkEmpresa": "https://sollusagricola.com.br/"
+    }
   ]
 }

@@ -8,8 +8,6 @@ import { CadastroCursosComponent } from "./cadastro-cursos/CadastroCursosCompone
 
 import { MsgModule } from '../shared/msg/msg.module';
 
-
-
 @NgModule({
   declarations: [
     CursosComponent,
