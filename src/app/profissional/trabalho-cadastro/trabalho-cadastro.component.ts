@@ -1,7 +1,7 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { MsgService } from 'src/app/shared/msg/msg.service';
 import { TrabalhoService } from './../../service/trabalho.service';
@@ -36,9 +36,10 @@ export class TrabalhoCadastroComponent implements OnInit {
       cit: [emprego.cit, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
       est: [emprego.est, [Validators.required]],
       tel: [emprego.tel, [Validators.required]],
-      cargo: [emprego.cargo, [Validators.minLength(5)]],
-      tEmpreg: [emprego.tEmpreg, [Validators.minLength(10)]],
-      data: [emprego.data, [Validators.minLength(10)]],
+      cargo: [emprego.cargo, [Validators.minLength(3)]],
+      tEmpreg: [emprego.tEmpreg, [Validators.minLength(5)]],
+      data: [emprego.data, [Validators.minLength(3)]],
+      descricao: [emprego.descricao, [Validators.required, Validators.minLength(3)]],
       linkEmpresa: [emprego.linkEmpresa, [Validators.maxLength(10)]]
     });
 

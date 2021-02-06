@@ -9,7 +9,9 @@ import { MsgModule } from '../shared/msg/msg.module';
 
 
 @NgModule({
-  declarations: [TrabalhoComponent, TrabalhoCadastroComponent],
+  declarations: [
+    TrabalhoComponent,
+    TrabalhoCadastroComponent],
   imports: [
     CommonModule,
     ProfissionalRoutingModule,

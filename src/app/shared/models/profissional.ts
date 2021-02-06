@@ -1,5 +1,5 @@
 export interface Profissional {
-  id: number;
+  id?: number;
   nomeEmp: string;
   cit: string;
   est: string;

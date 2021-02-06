@@ -1,7 +1,9 @@
-import { TrabalhoService } from './../../service/trabalho.service';
-import { Profissional } from './../../shared/models/profissional';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Resolve } from '@angular/router';
+
+import { TrabalhoService } from './../../service/trabalho.service';
+import { Profissional } from './../../shared/models/profissional';
+
 import { Observable, of } from 'rxjs';
 
 @Injectable({

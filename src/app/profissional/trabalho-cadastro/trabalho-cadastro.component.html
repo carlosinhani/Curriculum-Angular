@@ -1,1 +1,105 @@
-<p>trabalho-cadastro works!</p>
+<body>
+  <form autocomplete="off" novalidate [formGroup]="cadastro">
+    <div class="form-group">
+      <label for="nomeEmp" class="control-label">Nome da Empresa</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nomeEmp"
+        formControlName="nomeEmp"
+        placeholder="nome da empresa"
+      />
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label for="cit" class="contro-label">Cidade</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cit"
+          formControlName="cit"
+          placeholder="Cidade"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label for="est">Estado</label>
+        <input
+          type="text"
+          class="form-control"
+          id="est"
+          formControlName="est"
+          placeholder="estado"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label for="tel">Tel: Contato</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tel"
+          formControlName="tel"
+          placeholder="Contato"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cargo">Cargo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cargo"
+        formControlName="cargo"
+        placeholder="cargo"
+      />
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="tEmpreg">Tipo de Emprego</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tEmpreg"
+          formControlName="tEmpreg"
+          placeholder="tipo de emprego"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="data">Perído</label>
+        <input
+          type="text"
+          class="form-control"
+          id="data"
+          formControlName="data"
+          placeholder="perído trabalhou na empresa"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <input
+        type="text"
+        class="form-control"
+        id="descricao"
+        formControlName="descricao"
+        placeholder="descrição do cargo"
+      />
+    </div>
+    <div class="form-group">
+      <label for="linkEmpresa">Link da Empresa</label>
+      <input
+        type="url"
+        class="form-control"
+        id="linkEmpresa"
+        formControlName="linkEmpresa"
+        placeholder="link da empresa"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg" (click)="onSubmit()">
+      Salvar
+    </button>
+    <button type="button" class="btn btn-danger btn-lg" (click)="onCancel()">
+      Cancelar
+    </button>
+  </form>
+</body>
