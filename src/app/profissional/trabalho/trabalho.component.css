@@ -2,7 +2,6 @@ button{
   border-radius: 30px;
   font-weight: bold;
   font-family: monospace;
-  font-weight: bold;
 }
 table{
   background-color: #2d3436;
@@ -11,6 +10,11 @@ table{
 
 th{
   color: white;
+}
+span{
+  font-style: italic;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 
