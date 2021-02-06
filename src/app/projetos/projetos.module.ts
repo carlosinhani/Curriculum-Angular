@@ -10,7 +10,10 @@ import { MsgModule } from '../shared/msg/msg.module';
 
 
 @NgModule({
-  declarations: [CommitProjComponent, ProjectListComponent],
+  declarations: [
+    CommitProjComponent,
+    ProjectListComponent
+  ],
   imports: [
     CommonModule,
     ProjetosRoutingModule,

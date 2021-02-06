@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { ProfissionalRoutingModule } from './profissional-routing.module';
 import { TrabalhoComponent } from './trabalho/trabalho.component';
+import { TrabalhoCadastroComponent } from './trabalho-cadastro/trabalho-cadastro.component';
 
 
 @NgModule({
-  declarations: [TrabalhoComponent],
+  declarations: [TrabalhoComponent, TrabalhoCadastroComponent],
   imports: [
     CommonModule,
     ProfissionalRoutingModule
