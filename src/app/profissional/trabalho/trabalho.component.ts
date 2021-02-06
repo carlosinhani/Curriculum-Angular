@@ -13,7 +13,8 @@ import { catchError } from 'rxjs/operators';
 @Component({
   selector: 'trabalho',
   templateUrl: './trabalho.component.html',
-  styleUrls: ['./trabalho.component.css']
+  styleUrls: ['./trabalho.component.css'],
+  preserveWhitespaces: true
 })
 export class TrabalhoComponent implements OnInit {
   deleteModalRef: BsModalRef;
@@ -59,7 +60,7 @@ export class TrabalhoComponent implements OnInit {
   }
 
   handleError() {
-    this.msgService.alertMsgWarning('Erro ao carregar cursos.')
+    this.msgService.alertMsgWarning('Erro ao carregar Trabalhos.')
   }
 
   onEdit(id) {
@@ -79,7 +80,7 @@ export class TrabalhoComponent implements OnInit {
             this.deleteModalRef.hide();
         },
         error => {
-          this.msgService.alertMsgWarning('Erro ao deletar curso.')
+          this.msgService.alertMsgWarning('Erro ao deletar Trabalho.')
           this.deleteModalRef.hide();
         }
       );

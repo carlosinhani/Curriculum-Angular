@@ -9,7 +9,8 @@ import { TrabalhoService } from './../../service/trabalho.service';
 @Component({
   selector: 'app-trabalho-cadastro',
   templateUrl: './trabalho-cadastro.component.html',
-  styleUrls: ['./trabalho-cadastro.component.css']
+  styleUrls: ['./trabalho-cadastro.component.css'],
+  preserveWhitespaces: true
 })
 export class TrabalhoCadastroComponent implements OnInit {
 
@@ -52,11 +53,11 @@ export class TrabalhoCadastroComponent implements OnInit {
     if (this.cadastro.valid) {
       console.log('submit');
 
-      let msgSuccess = 'Curso criado com sucesso!';
-      let msgError = 'Erro ao criar curso';
+      let msgSuccess = 'Trabalho criado com sucesso!';
+      let msgError = 'Erro ao criar Trabalho';
       if (this.cadastro.value.id) {
-        msgSuccess = 'Curso atulizado com sucesso!';
-        msgError = 'Erro ao criar curso';
+        msgSuccess = 'Trabalho atulizado com sucesso!';
+        msgError = 'Erro ao criar Trabalho';
       }
 
       this.trabalho.save(this.cadastro.value).subscribe(

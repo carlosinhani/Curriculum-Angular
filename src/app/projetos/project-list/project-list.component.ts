@@ -59,7 +59,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   handleError() {
-    this.msgService.alertMsgWarning('Erro ao carregar cursos.')
+    this.msgService.alertMsgWarning('Erro ao carregar Projetos.')
   }
 
   onEdit(id) {
@@ -79,7 +79,7 @@ export class ProjectListComponent implements OnInit {
             this.deleteModalRef.hide();
         },
         error => {
-          this.msgService.alertMsgWarning('Erro ao deletar curso.')
+          this.msgService.alertMsgWarning('Erro ao deletar Projeto.')
           this.deleteModalRef.hide();
         }
       );
