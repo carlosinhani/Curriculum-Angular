@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 
 import { MsgService } from './../../shared/msg/msg.service';
 import { TrabalhoService } from './../../service/trabalho.service';
-
 @Component({
   selector: 'app-trabalho-cadastro',
   templateUrl: './trabalho-cadastro.component.html',
@@ -18,6 +17,7 @@ export class TrabalhoCadastroComponent implements OnInit {
   submitted = false;
 
 
+
   constructor(
     private fb: FormBuilder,
     private trabalho: TrabalhoService,
@@ -28,6 +28,7 @@ export class TrabalhoCadastroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
 
     const emprego = this.route.snapshot.data['emprego'];
 
