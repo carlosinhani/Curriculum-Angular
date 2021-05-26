@@ -1,3 +1,4 @@
+import { MaterialModule } from './../material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +19,8 @@ import { MsgModule } from '../shared/msg/msg.module';
     CursosRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MsgModule
+    MsgModule,
+    MaterialModule
   ]
 })
 export class CursosModule { }
