@@ -24,22 +24,22 @@
       >
         <thead>
           <tr class="center">
-            <th>Instituição de ensino</th>
-            <th>Cursos</th>
-            <th>Descrição</th>
-            <th>Data Cursos</th>
-            <th>Quantidate Horas</th>
-            <th>Certificados</th>
+            <ion-col col-3>Instituição de ensino</ion-col>
+            <ion-col col->Cursos</ion-col>
+            <ion-col>Descrição</ion-col>
+            <ion-col>Data Cursos</ion-col>
+            <ion-col>Quantidate Horas</ion-col>
+            <ion-col>Certificados</ion-col>
           </tr>
         </thead>
         <tbody>
           <tr class="center" *ngFor="let curso of cursos">
-            <td>{{ curso.instituicao }}</td>
-            <td>{{ curso.cursos }}</td>
-            <td>{{ curso.descricao }}</td>
-            <td>{{ curso.data }}</td>
-            <td>{{ curso.cargaH }}</td>
-            <td><img src="{{ curso.urlFoto }}" alt="sem foto" /></td>
+            <ion-col col-3>{{ curso.instituicao }}</ion-col>
+            <ion-col>{{ curso.cursos }}</ion-col>
+            <ion-col>{{ curso.descricao }}</ion-col>
+            <ion-col>{{ curso.data }}</ion-col>
+            <ion-col>{{ curso.cargaH }}</ion-col>
+            <ion-col><img src="{{ curso.urlFoto }}" alt="sem foto" /></ion-col>
             <td>
               <span class="float-right">
                 <button class="btn btn-outline-success mb-1 btn-sm">

@@ -29,8 +29,6 @@ export class MsgService {
     }
   }
 
-
-
   alertMsgWarning(message: string) {
     this.alertMsg(message, AlertCorMsg.WARNING);
   }
