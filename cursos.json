@@ -13,16 +13,6 @@
   ],
   "bootcamps": [
     {
-      "id": "MSw6bIy",
-      "instituicao": "Digital Innovation One ",
-      "cursos": "HTML Web Developer",
-      "data": "2020-10-07",
-      "cargaH": "27 horas",
-      "descricao": "Aprenda a programar páginas de internet e desenvolver websites utilizando HTML, CSS e JavaScript para iniciar sua trajetória profissional em desenvolvimento web front-end.",
-      "urlFoto": "https://hermes.digitalinnovation.one/tracks/3a10fc52-7df0-4d38-9d9c-e98f1e5f6c9a.png",
-      "linkCurso": "https://certificates.digitalinnovation.one/FC5D2E25"
-    },
-    {
       "id": "gRLeGeH",
       "instituicao": "Digital Innovation One",
       "cursos": "JavaScript Game Developer",
