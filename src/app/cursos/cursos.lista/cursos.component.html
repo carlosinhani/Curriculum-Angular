@@ -1,86 +1,67 @@
-
-  <div class="card">
-    <div class="card-header body">
-      <div class="float-left">
-        <h4>Cursos</h4>
-      </div>
-      <div class="float-right">
-        <button
-          type="button"
-          class="btn btn-primary"
-          [routerLink]="['cadastro']"
-        >
-          Novo Curso
-        </button>
-        <button type="button" class="btn btn-secondary" (click)="onRefresh()">
-          Atualizar
-        </button>
-      </div>
+<div class="card">
+  <div class="card-header body">
+    <div class="float-left">
+      <h2>Cursos</h2>
     </div>
-    <div class="card-body">
-      <table class="mat-elevation-z8"
-        *ngIf="cursos$ | async as cursos; else loading"
-      >
+    <div class="float-right">
+      <button type="button" class="btn btn-primary" [routerLink]="['cadastro']">
+        Novo Curso
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="onRefresh()">
+        Atualizar
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="mat-elevation-z8" *ngIf="cursos$ | async as cursos; else loading">
       <ng-container matColumnDef="position" *ngFor="let curso of cursos">
         <th mat-header-cell *matHeaderCellDef>Instituição de ensino</th>
         <td mat-cell *matCellDef="let element">{{ curso.instituicao }}</td>
       </ng-container>
-        <!-- <thead>
-          <tr class="center">
-            <ion-col col-3>Instituição de ensino</ion-col>
-            <ion-col col->Cursos</ion-col>
-            <ion-col>Descrição</ion-col>
-            <ion-col>Data Cursos</ion-col>
-            <ion-col>Quantidate Horas</ion-col>
-            <ion-col>Certificados</ion-col>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="center" *ngFor="let curso of cursos">
-            <ion-col>{{ curso.instituicao }}</ion-col>
-            <ion-col>{{ curso.cursos }}</ion-col>
-            <ion-col>{{ curso.descricao }}</ion-col>
-            <ion-col>{{ curso.data }}</ion-col>
-            <ion-col>{{ curso.cargaH }}</ion-col>
-            <ion-col><img src="{{ curso.urlFoto }}" alt="sem foto" /></ion-col>
-            <td>
-              <span class="float-right">
-                <button class="btn btn-outline-success mb-1 btn-sm">
-                  <a href="{{ curso.linkCurso }}" target="_blank"
-                    >Certificado</a
-                  >
-                </button>
-                <button
-                  class="btn btn-outline-primary mb-1 btn-sm"
-                  (click)="onEdit(curso.id)"
-                >
-                  Editar
-                </button>
-                <button
-                  class="btn btn-outline-danger mb-1 btn-sm"
-                  (click)="onDelete(curso)"
-                >
-                  Deletar
-                </button>
-              </span>
-            </td>
-          </tr> 
-        </tbody>-->
-      </table>
-      <ng-template #loading>
-        <span>Carregando Cursos...</span>
-      </ng-template>
-    <!-- </div>
+      <thead>
+        <tr style="border: solid 4px whitesmoke;">
+          <th>Instituição de ensino</th>
+          <th>Cursos</th>
+          <th>Descrição</th>
+          <th style="padding-left: 25px">Data Cursos</th>
+          <th style="padding-left: 75px;">Qtd:Horas</th>
+          <th>Certificados</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border: solid 4px whitesmoke;" *ngFor="let curso of cursos">
+          <td>{{ curso.instituicao }}</td>
+          <td>{{ curso.cursos }}</td>
+          <td>{{ curso.descricao }}</td>
+          <td style="padding-left: 25px;">{{ curso.data }}</td>
+          <td style="padding-left: 70px;">{{ curso.cargaH }}</td>
+          <td><a href="{{ curso.linkCurso }}" target="_blank"><img src="{{ curso.urlFoto }}" alt="sem foto" /></a></td>
+          <td>
+            <span class="float-right">
+              <button class="btn btn-outline-primary mb-1 btn-sm" (click)="onEdit(curso.id)">
+                Editar
+              </button>
+              <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(curso)">
+                Deletar
+              </button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #loading>
+      <span>Carregando Cursos...</span>
+    </ng-template>
   </div>
-  <ng-template #deleteModal>
-    <div class="modal-body text-center">
-      <p>Deseja remover este curso?</p>
-      <button type="button" class="btn btn-success" (click)="onConfirmDelete()">
-        Sim
-      </button>
-      <button type="button" class="btn btn-danger" (click)="onDeclineDelete()">
-        Não
-      </button>
-    </div>
-  </ng-template> -->
-
+</div>
+<ng-template #deleteModal>
+  <div class="modal-body text-center">
+    <p>Deseja remover este curso?</p>
+    <button type="button" class="btn btn-success" (click)="onConfirmDelete()">
+      Sim
+    </button>
+    <button type="button" class="btn btn-danger" (click)="onDeclineDelete()">
+      Não
+    </button>
+  </div>
+</ng-template>
