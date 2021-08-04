@@ -32,7 +32,6 @@ export class CadastroCursosComponent implements OnInit {
   ngOnInit() {
 
     const curso = this.route.snapshot.data['curso'];
-
     this.cadastro = this.fb.group({
       id: [curso.id],
       instituicao: [curso.instituicao, [Validators.required, Validators.minLength(2), Validators.maxLength(300)]],
