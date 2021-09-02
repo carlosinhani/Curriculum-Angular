@@ -9,9 +9,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Observable } from 'rxjs/internal/Observable';
 import { empty, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-
-
+import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'cursos',
   templateUrl: './cursos.component.html',
@@ -19,6 +17,7 @@ import { catchError } from 'rxjs/operators';
   preserveWhitespaces: true
 })
 export class CursosComponent implements OnInit {
+
 
   deleteModalRef: BsModalRef;
   @ViewChild('deleteModal') deleteModal;
