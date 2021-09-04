@@ -1,0 +1,24 @@
+.login {
+  text-align: center;
+  font-size: 36px;
+  font-style: italic;
+  margin-top: 15px;
+  font-family: monospace;
+}
+.borda {
+  border: solid 3px blue;
+  margin-left: 700px;
+  margin-right: 700px;
+  margin-top: 80px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  margin-top: 20%;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 51%;
+  margin-left: 25%;
+}
