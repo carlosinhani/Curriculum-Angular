@@ -10,12 +10,14 @@ import { MsgModule } from './shared/msg/msg.module';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-  ],
+
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
