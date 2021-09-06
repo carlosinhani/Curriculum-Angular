@@ -9,9 +9,6 @@ const routes: Routes = [
   {
     path: '', component: LoginComponent
   },
-  {
-    path: 'curriculum', component: HomeComponent
-  }
 ];
 
 

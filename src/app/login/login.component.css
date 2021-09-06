@@ -22,3 +22,11 @@
   width: 51%;
   margin-left: 25%;
 }
+
+.botao {
+  margin: 8px 8px 8px 17px;
+  padding: 0px 125px 0px 125px;
+  font-weight: bold;
+  font-size: 17px;
+  font-family: monospace;
+}

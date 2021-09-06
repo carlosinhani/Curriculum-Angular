@@ -1,9 +1,14 @@
+import { HomeComponent } from './curriculum/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: 'login'
+    path: '', pathMatch: 'full', redirectTo: '/login'
+  },
+
+  {
+    path: 'curriculum', component: HomeComponent
   },
   {
     path:'login',
