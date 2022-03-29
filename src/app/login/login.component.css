@@ -30,3 +30,10 @@
   font-size: 17px;
   font-family: monospace;
 }
+
+.parada{
+  font-size: 10px;
+  padding: 0px 125px 0px 125px;
+  font-weight: bold;
+
+}
