@@ -7,8 +7,8 @@
 }
 .borda {
   border: solid 3px blue;
-  margin-left: 700px;
-  margin-right: 700px;
+  /* margin-left: 700px; */
+  /* margin-right: 700px; */
   margin-top: 80px;
 }
 .example-form {
